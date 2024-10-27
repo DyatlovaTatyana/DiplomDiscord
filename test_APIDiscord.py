@@ -10,7 +10,7 @@ def test_get_message(base_url, channel_id, headers, message_id):
     assert response.status_code == 200
     assert response.headers['Content-Type'] == 'application/json'
     assert response.json().get('id') == str(message_id)
-    # print("Созданное сообщение: " + response.json()['content'])
+    print("Созданное сообщение: " + response.json()['content'])
 
 # Получить список сообщений
 def test_get_messages_list(base_url, channel_id, headers, message_id):
