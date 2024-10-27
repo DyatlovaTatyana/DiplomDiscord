@@ -58,7 +58,7 @@ def test_mention (base_url, channel_id, headers):
     assert response.headers['Content-Type'] == 'application/json'
     assert response.json()["mentions"][0]["id"] == mention_user_id
 
-Поставить реакцию на сообщение и потом удалить ее
+# Поставить реакцию на сообщение и потом удалить ее
 def test_reaction(base_url, channel_id, headers, message_id):
     emoji = "🔥"
     emoji_encoded = requests.utils.quote(emoji)
