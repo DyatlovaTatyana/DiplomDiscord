@@ -43,7 +43,7 @@ jobs:
       env:
         TOKEN: ${{ secrets.TOKEN }}
       run: |
-        pytest test_APIDiscord.py --alluredir=allure-result
+        pytest test_APIDiscord.py --alluredir=allure-results
       continue-on-error: true
   
     - name: Load test report history
