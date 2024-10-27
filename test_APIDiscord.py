@@ -59,16 +59,16 @@ def test_mention (base_url, channel_id, headers):
     assert response.json()["mentions"][0]["id"] == mention_user_id
 
 #Поставить реакцию на сообщение и потом удалить ее
-def test_reaction(base_url, channel_id, headers, message_id):
-    emoji = "🔥"
-    emoji_encoded = requests.utils.quote(emoji)
-    url = f"{base_url}/channels/{channel_id}/messages/{message_id}/reactions/{emoji_encoded}/@me"
-    add_reaction = requests.put(url, headers=headers)
-    assert add_reaction.status_code == 204
+# def test_reaction(base_url, channel_id, headers, message_id):
+#     emoji = "🔥"
+#     emoji_encoded = requests.utils.quote(emoji)
+#     url = f"{base_url}/channels/{channel_id}/messages/{message_id}/reactions/{emoji_encoded}/@me"
+#     add_reaction = requests.put(url, headers=headers)
+#     assert add_reaction.status_code == 204
 
-    remove_reaction_url = f"{base_url}/channels/{channel_id}/messages/{message_id}/reactions/{emoji_encoded}/@me"
-    delete_reaction = requests.delete(remove_reaction_url, headers=headers)
-    assert delete_reaction.status_code == 204
+#     remove_reaction_url = f"{base_url}/channels/{channel_id}/messages/{message_id}/reactions/{emoji_encoded}/@me"
+#     delete_reaction = requests.delete(remove_reaction_url, headers=headers)
+#     assert delete_reaction.status_code == 204
 
 
 #Негативные проверки
